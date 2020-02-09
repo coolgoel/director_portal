@@ -10,7 +10,7 @@
       Director's Portal
     </h1>
   </div>
-
+  <title>Director's Portal</title>
 
 
 
@@ -38,9 +38,9 @@
     </li>
 
     <li>
-      <a class="navigation__link navigation__link--teal" href="{% url 'external_letter_form' %}">
+      <a class="navigation__link navigation__link--yelllow" href="{% url 'external_letter_form' %}">
         <i class="fa fa-user" aria-hidden="true"></i>
-        <p class="navigation__text navigation__text--about-me">add external entry</p>
+        <p class="navigation__text navigation__text--about-us">add external entry</p>
       </a>
     </li>
 
@@ -62,29 +62,32 @@
 </nav>
 <div class ='container'>
  
-
-  {% if external_letters %}
+{% if external_letters %}
   <h1>External Letters</h1>
   <table class='table'>
+  <thead>
     <tr>
-      <th>Si No.</th>
+      <th>Si No.</th>      
       <th>from</th>
       <th>subject</th>
       <th>edit</th>
     </tr>
+  </thead>
+  <tbody>
     {% for external_letter in external_letters %}
     <tr>
       <td>{{external_letter.si_no}}</td>
       <td>{{external_letter.get_fromm_display}}</td>
       <td>{{external_letter.subject}}</td>
-      <td><a href="{% url 'edit_external' external_letter.id %}">Edit</td>
+      <td><a href="{% url 'edit_external' external_letter.id %}">Edit</a></td>
     </tr>
-  </table>
-
-
-  {% endfor %}
-  {% endif %}
-  {% if internal_letters %}
+    {% endfor %}
+  </tbody> 
+  </table>  
+{% endif %}
+</div>
+<div class='container'>
+{% if internal_letters %}
   <h1>Internal Letters</h1>
   <table class='table'>
     <tr>
@@ -93,17 +96,17 @@
       <th>doc type</th>
       <th>edit</th>
     </tr>
+  <tbody>
     {% for internal_letter in internal_letters %}
     <tr>
       <td>{{internal_letter.si_no}}</td>
       <td>{{internal_letter.in_date}}</td>
       <td>{{internal_letter.get_doc_type_display}}</td>
-      <td><a href="{% url 'edit_internal' internal_letter.id %}">Edit</td>
+      <td><a href="{% url 'edit_internal' internal_letter.id %}">Edit</a></td>
     </tr>
+    {% endfor %}
+  </tbody>
   </table>
-
-
-  {% endfor %}
-  {% endif %}
+{% endif %}
 </div>
 {% endblock %}

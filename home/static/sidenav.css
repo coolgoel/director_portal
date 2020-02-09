@@ -44,16 +44,21 @@
 }
 
 .navigation__text--about-me {
-	top: 64px;
+	top: 63px;
+	background-color: #F7B733;
+}
+
+.navigation__text--about-us {
+	top: 124px;
 	background-color: #F7B733;
 }
 
 .navigation__text--services {
-	top: 126px;
+	top: 186px;
 	background-color: #4ABDAC;
 }
 
 .navigation__text--contact-me	{
-	top: 188px;
+	top: 248px;
 	background-color: #FC4A1A;
 }

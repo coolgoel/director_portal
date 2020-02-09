@@ -11,7 +11,7 @@ def internal_creation_form(request):
     form = Internal_creation_form(request.POST or None)
     if form.is_valid():
         form.save()
-        form = Internal_creation_form()
+        return redirect('dashboard')
 
     context = {
         'form' : form,
@@ -22,7 +22,7 @@ def external_creation_form(request):
     form = External_creation_form(request.POST or None)
     if form.is_valid():
         form.save()
-        form = External_creation_form
+        return redirect('dashboard')
 
     context = {
         'form' : form,
@@ -86,8 +86,8 @@ def dashboard(request):
             print('\n')
         return render(request,'home/dashboard.html',
                               {'user_info':request.user,
-                              'external_letters':external_letter.objects.all(),
-                              'internal_letters':internal_letter.objects.all(),})
+                              'external_letters':external_letter.objects.all().order_by('si_no'),
+                              'internal_letters':internal_letter.objects.all().order_by('si_no'),})
     else:
         return HttpResponseRedirect(reverse('user_login'))
 
