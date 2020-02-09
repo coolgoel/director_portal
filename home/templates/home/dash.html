@@ -1,0 +1,65 @@
+<!-- {% extends 'home\base.html' %}
+{% load static %}
+{% block body %}
+
+<header class="border-b md:flex md:items-center md:justify-between p-1 pb-0 shadow-lg md:pb-4">
+
+    <div class="flex items-center justify-between mb-1 md:mb-0">
+        <h1 class="leading-none text-2xl text-grey-darkest">
+
+            Director's Portal
+        </h1>
+    </div>
+
+
+
+
+
+</header>
+
+<div class="container">
+    <div class="row py-3">
+        <div class="col-3 order-2" id="sticky-sidebar">
+            <div class="sticky-top">
+                ...
+            </div>
+        </div>
+        <div class="col" id="main">
+            <h1>Main Areaaa</h1>
+            ...
+        </div>
+    </div>
+</div>
+
+
+{% if external_letters %}
+<h1>External Letters</h1>
+{% for external_letter in external_letters %}
+<h2>{{external_letter.subject}}</h2>
+<h5>{{external_letter.get_fromm_display}}</h5>
+<h5>{{external_letter.get_to_display}}</h5>
+{% endfor %}
+{% endif %}
+
+
+{% if internal_letters %}
+<h1>Internal Letters</h1>
+{% for internal_letter in internal_letters %}
+<h2>{{internal_letter.subject}}</h2>
+<h5>{{internal_letter.get_fromm_display}}</h5>
+<h5>{{internal_letter.get_to_display}}</h5>
+{% endfor %}
+{% endif %}
+{% endblock %} -->
+
+<div class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+  
+  <!-- Page content -->
+  <div class="main">
+    ...
+  </div>
